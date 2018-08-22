@@ -1,0 +1,80 @@
+---
+title: "My First R presentation"
+author: "Elisa Battistoni"
+output: 
+  ioslides_presentation: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## New Slide 1
+Display content 1
+
+## New Slide 2
+
+Plain text
+
+*italics*
+
+**bold**
+
+`for (i %in% 1:10)` 
+
+## New Slide 3
+
+***
+A slide without a title
+
+
+## A slide with a title
+### A top level subheading
+#### A second level subheading
+
+1. item 1
+2. item 2
+
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+## My new slide with comment signs
+```{r, echo = TRUE}
+data("mtcars")
+head(mtcars)
+```
+
+
+## My new slide without comment signs
+```{r, echo = TRUE, comment = ""}
+head(mtcars)
+```
+
+
+## My first slide with plot
+```{r, fig.align='center', fig.cap='AWESOME!!'}
+plot(mtcars$wt, mtcars$mpg, xlab = "Weight", ylab = "MPG")
+```

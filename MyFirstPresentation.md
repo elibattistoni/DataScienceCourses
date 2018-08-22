@@ -1,7 +1,6 @@
 ---
 title: "My First R presentation"
 author: "Elisa Battistoni"
-date: "8/22/2018"
 output: 
   ioslides_presentation: 
     keep_md: yes
