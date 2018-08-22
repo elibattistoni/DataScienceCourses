@@ -1,0 +1,19 @@
+---
+title: "Sample for Github Pages"
+author: "Elisa Battistoni"
+date: "8/22/2018"
+output: html_document
+---
+
+Just a sample with some code from the Developing Data Products course
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+
+suppressPackageStartupMessages(library(plotly))
+
+data(mtcars)
+# basic scatterplot
+plot_ly(mtcars, x = ~wt, y = ~mpg, type = "scatter")
+
+```
+
