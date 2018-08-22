@@ -1,0 +1,9 @@
+---
+title: "Developing Data Products - Project week 2"
+author: "Elisa Battistoni"
+date: "8/22/2018"
+output: html_document
+---
+
+This is a webpage created with R Markdown that features a map created with Leaflet.
+This webpage is hosted on GitHub Pages.
