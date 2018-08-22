@@ -7,3 +7,52 @@ output: html_document
 
 This is a webpage created with R Markdown that features a map created with Leaflet.
 This webpage is hosted on GitHub Pages.
+
+Date and time of document creation:
+```{r, eval = TRUE, echo = FALSE, comment = ""}
+date()
+```
+
+Interactive map created with Leaflet:
+```{r, eval = TRUE, echo = FALSE, comment = ""}
+library(leaflet)
+
+MyLeafletLatLong = data.frame(
+    lat = c(41.543924, 40.514680, 46.44548, 48.1351),
+    long = c(12.285448, 14.163612, 11.74872, 11.5820)
+)
+
+Rome_Icon = makeIcon(
+    iconUrl = "https://www.informagiovani-italia.com/colosseo1.jpg",
+    iconWidth = 31*215/230, iconHeight = 31,
+    iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+Trento_Icon = makeIcon(
+    iconUrl = "http://archivio.lavocedeltrentino.it/wp-content/uploads/2016/07/orso-buno-con-cuccioli-900x450.jpg",
+    iconWidth = 31*215/230, iconHeight = 31,
+    iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+Napoli_Icon = makeIcon(
+    iconUrl = "http://2.citynews-napolitoday.stgy.ovh/~media/original-hi/59187489013853/pizza-14-13.jpg",
+    iconWidth = 31*215/230, iconHeight = 31,
+    iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+Munich_Icon = makeIcon(
+    iconUrl = "https://cdn.images.dailystar.co.uk/dynamic/162/photos/578000/620x/oktoberfest-549933.jpg",
+    iconWidth = 31*215/230, iconHeight = 31,
+    iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+MyLeafletLatLong %>% 
+    leaflet() %>%
+    addTiles() %>%
+    addMarkers(lat=41.543924, lng=12.285448, popup="Roma", icon = Rome_Icon) %>%
+    addMarkers(lat=40.514680, lng=14.163612, popup="Napoli", icon = Napoli_Icon) %>%
+    addMarkers(lat=46.44548, lng=11.74872, popup="Trento", icon = Trento_Icon) %>%
+    addMarkers(lat=48.1351, lng=11.5820, popup="München", icon = Munich_Icon)
+
+```
+
