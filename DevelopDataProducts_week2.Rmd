@@ -1,7 +1,6 @@
 ---
 title: "Developing Data Products - Project week 2"
 author: "Elisa Battistoni"
-date: "8/22/2018"
 output: 
   html_document: 
     keep_md: yes
@@ -11,12 +10,12 @@ This is a webpage created with R Markdown that features a map created with Leafl
 This webpage is hosted on GitHub Pages.
 
 Date and time of document creation:
-```{r, eval = TRUE, echo = FALSE, comment = ""}
+```{r, eval = TRUE, echo = TRUE, comment = ""}
 date()
 ```
 
 Interactive map created with Leaflet:
-```{r, eval = TRUE, echo = FALSE, comment = ""}
+```{r, eval = TRUE, echo = TRUE, comment = ""}
 library(leaflet)
 
 MyLeafletLatLong = data.frame(
