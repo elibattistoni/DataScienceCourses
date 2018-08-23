@@ -1,0 +1,40 @@
+---
+title: "Developing Data Products"
+subtitle: "Project week 3"
+author: "Elisa Battistoni"
+output: ioslides_presentation
+---
+
+## Project Details
+
+
+This is a web page presentation created with R Markdown that features a plot created with Plotly.
+
+This webpage is hosted on GitHub Pages.
+
+Date and time of document creation:
+```{r, eval = TRUE, echo = FALSE, comment = ""}
+date()
+```
+
+
+## Plot with Plotly
+```{r, echo = FALSE, comment = ""}
+date()
+suppressPackageStartupMessages(library(plotly))
+data(quakes)
+
+plot_geo(quakes, lat = quakes$lat, lon = quakes$long) %>% add_markers(
+        color = quakes$mag,
+        colors = 'Purples', text = paste("Station", "<br>", quakes$stations)
+    ) %>%
+    colorbar(title = "Richter Magnitude") %>%
+    layout(title = "Locations of Earthquakes of Fiji since 1964",
+        geo = list(
+        projection = list(type = "winkel tripel", scale = 4, 
+                          rotation = list(lon =182, lat = -30)),
+        center = list(lon = 182, lat = -30),
+        resolution = 200, 
+        showland = T, landcolor = "#66CD00",
+        showocean = T, oceancolor = "#97FFFF"))
+```
